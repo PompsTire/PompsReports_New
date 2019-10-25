@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Pomp's SQL Reporting</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+        <link rel="stylesheet" type="text/css" href="css/StyleSheet.css" media="screen" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager" runat="server" AsyncPostBackTimeout="1800"></asp:ScriptManager>
+    <div>
+        <asp:ContentPlaceHolder id="cpTop" runat="server">
+            <div id="Top">
+                <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                &nbsp;&nbsp;
+                <asp:LinkButton ID="lnkbtnLogout" runat="server" OnClick="lnkbtnLogout_Click">Logout</asp:LinkButton>
+            </div>
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cpHeader" runat="server">
+            <div id="Header">
+                <asp:Image ID="Logo" CssClass="Logo" ImageUrl="~/img/Pomp-s-Logo-2017-Clr.png" Width="169px" Height="76px" runat="server" />&nbsp;
+                SQL Reporting Site
+            </div>
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cpMainMenu" runat="server">
+            <div id="MainMenu">
+                <ul>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnHome" OnClick="lnkbtnHome_Click" runat="server">Home</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnSalesServices" runat="server" OnClick="lnkbtnSalesServices_Click">Sales & Services</asp:LinkButton>
+                        <ul>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnRoadService" runat="server" OnClick="lnkbtnRoadService_Click">Road Service</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnDealerPrograms" runat="server" OnClick="lnkbtnDealerPrograms_Click">Dealer Programs</asp:LinkButton></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnReports" runat="server">Reports</asp:LinkButton>
+                        <ul>
+                            <li>
+                                <asp:LinkButton ID="lnkbtnFinancials" OnClick="lnkbtnFinancials_Click" runat="server">Financials</asp:LinkButton>
+                            </li>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnInventory1" runat="server" OnClick="lnkbtnInventory_Click1">Inventory</asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton ID="lnkbtnSales" OnClick="lnkbtnSales_Click" runat="server">Sales</asp:LinkButton></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnQuery" OnClick="lnkbtnQuery_Click" runat="server">Query</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="lnkbtnAdmin" runat="server" OnClick="lnkbtnAdmin_Click">Administrator</asp:LinkButton></li>
+                </ul>
+            </div>
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+            <asp:Label ID="lblUserID" runat="server" Text=""></asp:Label></asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cpFooter" runat="server">
+            <div id="footer">
+                &copy;<asp:Label ID="lblYear" runat="server" Text=""></asp:Label>&nbsp;Pomp's Tire Service, Inc.
+            </div>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

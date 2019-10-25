@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pomp's Wholesale Dealer Programs</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <style type="text/css">
+            body {
+                margin-top: 100px;
+            }
+            body h1, body h2 {
+                text-align: center;
+            }
+            .col {
+                text-align: center !important;
+            }
+            .col input {
+                box-shadow: 3px 3px 3px #ccc;
+                color: #fff;
+            }
+            #buttonRow, #buttonRow2 {
+                margin-top: 100px;
+            }
+            #buttonRow .col input, #buttonRow2 .col input {
+                font-size: 18px;
+                min-width: 250px;
+            }
+            .modal {
+                top: 50px !important;
+            }
+            .modal-dialog {
+                max-width: 1000px;
+                width: 100%;
+            }
+            iframe {
+                border: 0px !important;
+            }
+            #modal4 .modal-dialog {
+                max-width: 775px;
+                width: 100%;
+            }
+            #modal5 .modal-dialog {
+                max-width: 775px;
+                width: 100%;
+            }
+            #modal6 .modal-dialog {
+                max-width: 770px;
+                width: 100%;
+            }
+        </style>
+        <h1>Pomp's Wholesale</h1>
+        <h2>Dealer Programs</h2>
+        <div class="container">
+            <div class="row" id="buttonRow">
+                <div class="col"><input class="btn btn-lg btn-primary" type="button" name="dealers" data-toggle="modal" data-target="#modal1" value="Show Dealer's List"></div>
+                <div class="col"><input class="btn btn-lg btn-success" type="button" name="register" data-toggle="modal" data-target="#modal2" value="Register New Dealer"></div>
+                <div class="col"><input class="btn btn-lg btn-info" type="button" name="update" data-toggle="modal" data-target="#modal3" value="Update Existing Dealer"></div>
+            </div>
+            <div class="row" id="buttonRow2">
+                <div class="col"><input class="btn btn-lg btn-primary" type="button" name="cancel" data-toggle="modal" data-target="#modal4" value="Deactivate Dealer Account"></div>
+                <div class="col"><input class="btn btn-lg btn-success" type="button" name="cancel" data-toggle="modal" data-target="#modal5" value="Update Growth Goal"></div>
+                <div class="col"><input class="btn btn-lg btn-info" type="button" name="cancel" data-toggle="modal" data-target="#modal6" value="Add New Program"></div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Dealer's List</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-0 p-0">
+                        <div id="spinner" style="position:relative;">
+                            <div style="position: absolute; top: 48%; left: 48%; margin-top: 25%;">
+                                <img src="images/805.gif" />
+                            </div>
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe class="embed-responsive-item" name="dealerInfo" src="" width="1140" height="500" onload="document.getElementById('spinner').style.display='none';window.parent.scrollTo(0,0)" allowtransparency="true"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#modal1').on('shown.bs.modal',function(){
+                document.getElementById('spinner').style.display = 'block';
+                $(this).find('iframe').attr('src','//gbdevel01/DealerForms/DealerList/index.php')
+            })
+        </script>
+        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Register New Dealer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-0 p-0">
+                        <div id="spinner" style="position:relative;">
+                            <div style="position: absolute; top: 48%; left: 48%; margin-top: 25%;">
+                                <img src="images/805.gif" />
+                            </div>
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe class="embed-responsive-item" name="registerDealer" src="" width="1140" height="500" onload="document.getElementById('spinner').style.display='none';window.parent.scrollTo(0,0)" allowtransparency="true"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#modal2').on('shown.bs.modal',function(){
+                document.getElementById('spinner').style.display = 'block';
+                $(this).find('iframe').attr('src','//gbdevel01/DealerForms/Register/index.php')
+            })
+        </script>
+        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Dealer Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-0 p-0">
+                        <div id="spinner" style="position:relative;">
+                            <div style="position: absolute; top: 48%; left: 48%; margin-top: 25%;">
+                                <img src="images/805.gif" />
+                            </div>
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe class="embed-responsive-item" name="searchDealer" src="" width="1140" height="500" onload="document.getElementById('spinner').style.display='none';window.parent.scrollTo(0,0)" allowtransparency="true"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input class="btn btn-md btn-success" type="button" name="refresh" id="refresh3" data-dismiss="modal" value="Update Another">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#modal3').on('shown.bs.modal',function(){
+                document.getElementById('spinner').style.display = 'block';
+                $(this).find('iframe').attr('src','http://gbdevel01/DealerForms/Update/index.php')
+            })
+            $('#modal3').on('hidden.bs.modal', function() {
+                $(this).removeData('modal');
+            })
+            $('#refresh3').on('click', function() {
+                setTimeout(function(){ 
+                    $('#modal3').modal('show');
+                }, 500);
+            })
+        </script>
+        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="modal4" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Deactivate Dealer Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-0 p-0">
+                        <div id="spinner" style="position:relative;">
+                            <div style="position: absolute; top: 48%; left: 48%; margin-top: 25%;">
+                                <img src="images/805.gif" />
+                            </div>
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe class="embed-responsive-item" name="searchDealer" src="" width="1140" height="500" onload="document.getElementById('spinner').style.display='none';window.parent.scrollTo(0,0)" allowtransparency="true"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input class="btn btn-md btn-success" type="button" name="refresh" id="refresh4" data-dismiss="modal" value="Deactivate Another">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#modal4').on('shown.bs.modal',function(){
+                document.getElementById('spinner').style.display = 'block';
+                $(this).find('iframe').attr('src','http://gbdevel01/DealerForms/CancelDealer/index.php')
+            })
+            $('#modal4').on('hidden.bs.modal', function() {
+                $(this).removeData('modal');
+            })
+            $('#refresh4').on('click', function() {
+                setTimeout(function(){ 
+                    $('#modal4').modal('show');
+                }, 500);
+            })
+        </script>
+        <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="modal5" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Growth Goal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-0 p-0">
+                            <div id="spinner" style="position:relative;">
+                                <div style="position: absolute; top: 48%; left: 48%; margin-top: 25%;">
+                                    <img src="images/805.gif" />
+                                </div>
+                            </div>
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                <iframe class="embed-responsive-item" name="searchDealer" src="" width="1140" height="500" onload="document.getElementById('spinner').style.display='none';window.parent.scrollTo(0,0)" allowtransparency="true"></iframe>
+                            </div>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input class="btn btn-md btn-success" type="button" name="refresh" id="refresh5" data-dismiss="modal" value="Update Another">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#modal5').on('shown.bs.modal',function(){
+                document.getElementById('spinner').style.display = 'block';
+                $(this).find('iframe').attr('src','http://gbdevel01/DealerForms/GrowthGoal/index.php')
+            })
+            $('#modal5').on('hidden.bs.modal', function() {
+                $(this).removeData('modal');
+            })
+            $('#refresh5').on('click', function() {
+                setTimeout(function(){ 
+                    $('#modal5').modal('show');
+                }, 500);
+            })
+        </script>
+        <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="modal6" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add New Program</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-0 p-0">
+                            <div id="spinner" style="position:relative;">
+                                <div style="position: absolute; top: 48%; left: 48%; margin-top: 25%;">
+                                    <img src="images/805.gif" />
+                                </div>
+                            </div>
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                <iframe class="embed-responsive-item" name="searchDealer" src="" width="1140" height="500" onload="document.getElementById('spinner').style.display='none';window.parent.scrollTo(0,0)" allowtransparency="true"></iframe>
+                            </div>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input class="btn btn-md btn-success" type="button" name="refresh" id="refresh6" data-dismiss="modal" value="Add Another">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#modal6').on('shown.bs.modal',function(){
+                document.getElementById('spinner').style.display = 'block';
+                $(this).find('iframe').attr('src','http://gbdevel01/DealerForms/NewProgram/index.php');
+            })
+            $('#modal6').on('hidden.bs.modal', function() {
+                $(this).removeData('modal');
+            })
+            $('#refresh6').on('click', function() {
+                setTimeout(function(){ 
+                    $('#modal6').modal('show');
+                }, 500);
+            })
+        </script>
+    </body>
+</html>
